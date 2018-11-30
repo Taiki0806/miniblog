@@ -1,0 +1,28 @@
+// Place all the styles related to the tweets controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#header {
+  position: fixed;
+  z-index: 1;
+}
+
+#new_tweet {
+  padding-top: 80px;
+}
+
+.success {
+  padding-top: 80px;
+}
+
+.mather {
+  width: 100%;
+}
+
+#top-name {
+  padding-top: 80px;
+}
+
+#child {
+  margin: 0 20%;
+}

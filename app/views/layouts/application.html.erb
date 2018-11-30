@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Miniblog</title>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+    <!--   jQuery CDN -->
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <nav id="header" class="green lighten-1">
+  <div class="nav-wrapper">
+    <a href="/" class="brand-logo" data-turbolinks="false" >miniBlog</a>
+      <% if user_signed_in? %>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+              <li><%= current_user.nickname %></li>
+              <li><a href="/users/<%= current_user.id %>" data-turbolinks="false" >マイページ</a></li>
+              <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+              <li><%= link_to '投稿する', new_tweet_path  %></li>
+              <li><a id="button" >バルス</a></li>
+          </ul>
+      <% else %>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><%= link_to 'ログイン', new_user_session_path %></li>
+            <li><%= link_to '新規登録', new_user_registration_path %></li>
+        </ul>
+      <% end %>
+  </div>
+</nav>
+
+
+<script type="text/javascript" src="./app.js"></script>
+
+    <%= yield %>
+  </body>
+</html>

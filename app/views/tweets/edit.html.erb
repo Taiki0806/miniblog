@@ -1,0 +1,22 @@
+<div class="row">
+    <%= form_for(@tweet) do |f| %>
+      <form class="col s12">
+        <div class="success">
+          <div class="input-field col s6">
+            <!-- <input id="input_text" placeholder="Image url" type="text" data-length="10"> -->
+            <%= f.text_field :image, placeholder: "Image url"  %>
+            <label for="input_text"></label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+<!--             <textarea id="textarea1" placeholder="Tweet" class="materialize-textarea" data-length="120"></textarea> -->
+            <%= f.text_area :text, placeholder: "text", class: "materialize-textarea" %>
+            <label for="textarea1"></label>
+          </div>
+        </div>
+ <!--        <a class="waves-effect waves-light btn">SENT</a> -->
+            <%= f.submit "SENT", class: "waves-effect waves-light btn" %>
+      </form>
+    <% end %>
+</div>
